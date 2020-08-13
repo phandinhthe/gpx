@@ -6,6 +6,8 @@ import com.terry.karros.gpx.demo.entity.GPXEntity;
 import com.terry.karros.gpx.demo.exception.GPXExceptionHelper;
 import com.terry.karros.gpx.demo.mapper.response.GPXResponseMapper;
 import com.terry.karros.gpx.demo.repository.GPXRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
@@ -13,6 +15,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class GPXService {
+    private static final Logger log = LoggerFactory.getLogger(GPXService.class);
     public static final String CREATED_TIME = "createdTime";
 
     private final GPXRepository repository;

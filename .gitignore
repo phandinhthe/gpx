@@ -3,3 +3,6 @@
 /HELP.md
 /mvnw
 /mvnw.cmd
+/logs/
+/target/
+/data/
