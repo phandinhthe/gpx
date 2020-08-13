@@ -6,7 +6,8 @@ import javax.persistence.*;
 @Table(name = "Link")
 public class LinkEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "link_entity_sequence")
+    @SequenceGenerator(name = "link_entity_sequence", allocationSize = 10)
     long id;
 
     private String href;

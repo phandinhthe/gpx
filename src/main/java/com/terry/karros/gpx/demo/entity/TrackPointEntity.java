@@ -8,7 +8,8 @@ import java.time.ZonedDateTime;
 @Table(name = "TrackPoint")
 public class TrackPointEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "track_point_entity_sequence")
+    @SequenceGenerator(name = "track_point_entity_sequence", allocationSize = 10)
     private long id;
 
     private Double lat;

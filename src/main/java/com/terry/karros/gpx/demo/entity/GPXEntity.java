@@ -9,7 +9,8 @@ import java.util.Objects;
 @Table(name = "GPX")
 public class GPXEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "gpx_entity_sequence")
+    @SequenceGenerator(name = "gpx_entity_sequence", allocationSize = 10)
     private long id;
 
     @OneToOne(cascade = CascadeType.ALL)

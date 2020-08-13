@@ -9,7 +9,8 @@ import java.util.List;
 @Table(name = "Metadata")
 public class MetadataEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "metadata_entity_sequence")
+    @SequenceGenerator(name = "metadata_entity_sequence", allocationSize = 10)
     private long id;
 
     private String name;

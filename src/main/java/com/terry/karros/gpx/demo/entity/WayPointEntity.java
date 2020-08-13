@@ -6,7 +6,8 @@ import javax.persistence.*;
 @Table(name = "WayPoint")
 public class WayPointEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "way_point_entity_sequence")
+    @SequenceGenerator(name = "way_point_entity_sequence", allocationSize = 10)
     private long id;
 
 

@@ -7,7 +7,8 @@ import java.util.List;
 @Table(name = "TrackSegment")
 public class TrackSegmentEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "track_seg_entity_sequence")
+    @SequenceGenerator(name = "track_seg_entity_sequence", allocationSize = 10)
     private long id;
 
     @OneToMany(cascade = CascadeType.ALL)
